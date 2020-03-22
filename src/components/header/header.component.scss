@@ -1,0 +1,33 @@
+@import '../../styles.scss';
+
+:host {
+  display: flex;
+  flex-direction: row;
+  background-color: $background-green;
+  height: $header-height;
+  padding: $content-spacing;   
+}
+
+.app-header {
+    &-contact {
+        display: flex;
+        flex-direction: column;
+        padding: $content-spacing;
+        width: 30%;
+        justify-content: center;
+        line-height: 26px;
+        &-icon {
+            vertical-align: bottom;
+        }
+    }
+    &-title {
+        display: flex;
+        flex-direction: column;
+        padding: $content-spacing;
+        font-size: $title-font-size;
+        justify-content: center;
+        &--white {
+            color: white;
+        }
+    }
+}
