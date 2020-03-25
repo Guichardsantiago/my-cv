@@ -3,30 +3,36 @@
 :host {
     display: flex;
     flex-direction: column;
-    padding: $content-spacing;   
+    padding: $content-spacing;
+    text-align: justify;
   }
   
   .app-body {
+    &-title {
+        margin-left: 30%;
+        font-size: $section-title-font-size;
+        padding: $content-spacing * 2;
+    }
     &-section {
         display: flex;
         flex-direction: row;
-        margin: 16px 0;
-        &-title {
-            font-size: $section-title-font-size;
-        }
+        margin: $content-spacing * 2 0;
+        padding: $content-spacing;
 
         &-left {
             display: flex;
             flex-direction: column;
-            padding: $content-spacing;
             min-width: 30%;
-            justify-content: center;
-            align-items: center;
+            padding: $content-spacing;
         }
         &-right {
             display: flex;
             flex-direction: column;
-            padding: $content-spacing;
+            padding: $content-spacing 0;
+
+            &-content {
+                margin-right: $content-spacing * 2;
+            }
         }
     }
   }
