@@ -1,13 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 $background-green: #78C8A1;
-$header-height: 400px;
+$header-height: 120px;
 $content-spacing: 8px;
-$title-font-size: 64px;
+$title-font-size: 48px;
 $section-title-font-size: 36px;
 
 body {
-    margin: 0 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #DDDDDD;
+    //background: linear-gradient(#FFFFFF, #BBBBBB);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

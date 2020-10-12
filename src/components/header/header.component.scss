@@ -1,32 +1,59 @@
 @import '../../styles.scss';
 
+$profile-size: 200px;
+
 :host {
+  width: 100%;
   display: flex;
   flex-direction: row;
   background-color: $background-green;
   height: $header-height;
-  padding: $content-spacing;   
+  background-image: linear-gradient(to bottom right, #78c8A1, #7bc878);
 }
 
 .app-header {
     &-contact {
-        display: flex;
-        flex-direction: column;
-        padding: $content-spacing;
-        width: 30%;
-        justify-content: center;
+        margin-top: auto;
+        margin-bottom: $content-spacing;
+        width: 20%;
         line-height: 26px;
+        text-align: center;
         &-icon {
             vertical-align: bottom;
+            height: 32px;
+            widows: 32px;
+        }
+        img {
+            margin-right: $content-spacing;
         }
     }
     &-title {
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
+        width: 60%;
         font-size: $title-font-size;
-        justify-content: center;
+        padding-bottom: 8px;
+
         &--white {
+            font-size: 22px;
             color: white;
         }
+
+        &-profile {
+            display: flex;
+            border-radius: 50%;
+            height: $profile-size;
+            width: $profile-size;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 18px;
+        }
+    }
+
+    &-profile {
+        width: 20%;
+        margin-right: auto;
+        margin-left: auto;
     }
 }

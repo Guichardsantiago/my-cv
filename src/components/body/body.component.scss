@@ -1,38 +1,156 @@
 @import '../../styles.scss';
 
+$container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.3);
+$gutter: 30px;
+$border-width: 4px;
+$dot-diameter: 8px;
+$timeline-color: $background-green;
+
 :host {
+    display: flex;
+    flex-direction: row;
+    padding-top: $content-spacing*3;
+    text-align: justify;
+  }
+
+
+.main-content {
+    width:60%;
+}
+
+.my-icon{
+    color: $timeline-color;
+    background-color: #FFFFFF;
+    border: $border-width solid $timeline-color;
+    border-radius: 100%;
+    padding: $content-spacing;
+    position: absolute;
+    top: 0;
+    left: 171px;
+    }
+
+.separator {
+    height: 85px;
+    clear: both;
+    position: relative;
+}
+
+.timeline {
+  background:#fff;
+  padding: $content-spacing*4 $content-spacing*6;
+  position: relative;
+  margin-bottom: $content-spacing*4;
+  border-radius: 0.5rem;
+  box-shadow: $container-shadow;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 241px;
+    bottom: 0;
+    width: $border-width;
+    background: #ddd;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  } 
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+  .title {
+    margin-bottom: $content-spacing;
+    float: left;
+    width: 165px;
+    padding-right: $gutter;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: $dot-diameter;
+      height: $dot-diameter;
+      border: $border-width solid $timeline-color;
+      background-color:#fff;
+      border-radius:100%;
+      top: $content-spacing/2;
+      right: -$dot-diameter;
+      z-index: 99;
+    }
+    h3 {
+      margin: 0;
+      font-size: 120%;
+    }
+    p {
+      margin: 0;
+      font-size: 100%;
+    }
+  }
+  .body {
+    margin: 0 0 $content-spacing * 3;
+    float: right;
+    width: 69%;
+    text-align: justify;
+    padding-left: $gutter;
+    p {
+      line-height: 1.4em;
+      &:first-child {
+        margin-top: 0;
+        font-weight: 400;
+      }
+    }
+    ul {
+      color:#aaa;
+      padding-left: 0;
+      list-style-type: none;
+      li:before {
+        content: "–";
+        margin-right: $content-spacing;
+      }
+    }
+  }
+}
+
+.languages-box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
     display: flex;
     flex-direction: column;
     padding: $content-spacing;
-    text-align: justify;
-  }
-  
-  .app-body {
+    text-align: center;
+
     &-title {
-        margin-left: 30%;
-        font-size: $section-title-font-size;
-        padding: $content-spacing * 2;
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: $content-spacing;
     }
-    &-section {
-        display: flex;
-        flex-direction: row;
-        margin: $content-spacing * 2 0;
-        padding: $content-spacing;
 
-        &-left {
-            display: flex;
-            flex-direction: column;
-            min-width: 30%;
-            padding: $content-spacing;
-        }
-        &-right {
-            display: flex;
-            flex-direction: column;
-            padding: $content-spacing 0;
-
-            &-content {
-                margin-right: $content-spacing * 2;
-            }
-        }
+    &-label {
     }
-  }
+
+    &-item {
+        text-align: center;
+        margin: $content-spacing 0;
+    }
+}
+
+.about-me {
+    margin-top: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: $content-spacing;
+
+    &-title {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: $content-spacing;
+    }
+}
